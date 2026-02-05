@@ -2,7 +2,9 @@ name: Deploy VitePress site to Pages
 
 on:
   push:
-    branches: [main]
+    # 🚩 核心修复：将 main 改为 master，匹配你的默认分支
+    branches: [master]
+  # 允许手动触发
   workflow_dispatch:
 
 permissions:
@@ -27,24 +29,24 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9 # 或你本地使用的版本
+          version: 9
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # 🚩 第二步：将缓存类型改为 pnpm
-          cache: pnpm
+          # 🚩 第二步：显式指定 pnpm 缓存
+          cache: 'pnpm'
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        # 🚩 第三步：使用 pnpm 安装
+        # 🚩 第三步：安装依赖
         run: pnpm install 
 
       - name: Build with VitePress
-        # 🚩 第四步：根据你的 package.json，命令是 build
+        # 🚩 第四步：执行构建 (对应你 package.json 里的 build 脚本)
         run: pnpm run build
 
       - name: Upload artifact

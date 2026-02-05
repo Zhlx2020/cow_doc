@@ -23,27 +23,33 @@ jobs:
         with:
           fetch-depth: 0
 
+      # 🚩 第一步：安装 pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9 # 或你本地使用的版本
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # 🚩 建议使用稳定的 LTS 版本
-          cache: npm
+          node-version: 20
+          # 🚩 第二步：将缓存类型改为 pnpm
+          cache: pnpm
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        # 🚩 如果没有 package-lock.json，建议用 npm install
-        run: npm install 
+        # 🚩 第三步：使用 pnpm 安装
+        run: pnpm install 
 
       - name: Build with VitePress
-        # 🚩 确保 package.json 里有 docs:build 命令
-        run: npm run docs:build 
+        # 🚩 第四步：根据你的 package.json，命令是 build
+        run: pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # 🚩 核心：这里要对应 VitePress 默认的输出路径
           path: docs/.vitepress/dist
 
   deploy:

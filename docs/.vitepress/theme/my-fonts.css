@@ -1,0 +1,77 @@
+/* 1. 引入字体 */
+/* JetBrains Mono: 包含 400(常规), 500(中等), 700(加粗) */
+/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap'); */
+
+/* 霞鹜文楷 屏幕阅读版 CDN */
+/* @import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css'); */
+
+
+
+/* 2. 针对文档区域内的所有标题 (H1 - H6) 进行加粗配置 */
+
+
+/* 1. 定义常规体 (Regular) - 用于大部分文字 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Regular.woff2') format('woff2');
+  font-weight: 400; /* 400 对应 Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. 定义加粗体 (Bold) - 用于标题和加粗文字 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Bold.woff2') format('woff2');
+  font-weight: 700; /* 700 对应 Bold */
+  font-style: normal;
+  font-display: swap;
+}
+/* 2. 定义加粗体 (Bold) - 用于标题和加粗文字 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Medium.woff2') format('woff2');
+  font-weight: 500; /* 500 对应 Medium */
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* @font-face {
+  font-family: 'JetBrainsMono';
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 500; 
+  font-style: normal;
+  font-display: swap;
+} */
+
+/* @font-face {
+  font-family: 'JetBrainsMono';
+  src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700; 
+  font-style: normal;
+  font-display: swap;
+} */
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+  font-weight: 500; 
+  font-style: normal;
+  font-display: swap;
+}
+/* 3. 应用字体 */
+:root {
+  --vp-font-family-base: "MiSans", "PingFang SC", "Microsoft YaHei", sans-serif !important;
+  --vp-font-family-mono: "JetBrainsMono", "MiSans", monospace !important;
+
+} */
+
+/* 必须排除代码块，否则代码会报错 */
+
+
+/* 调整行高，让黑体看起来更清爽 */
+body {
+  line-height: 1.7; 
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
+}

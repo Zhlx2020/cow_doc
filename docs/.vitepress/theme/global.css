@@ -1,0 +1,110 @@
+html, body {
+  /* 
+     1. 路径必须以 / 开头，代表从站点根目录（public）找。
+     2. 后面的 0 0 代表点击的“热点”位置在图片的左上角。
+  */
+  cursor: url('/mouse.svg') 0 0, auto !important;
+}
+
+
+
+p,  code, input, textarea {
+  /* 文本建议保持默认 I 型，或者用一个极简的细线 SVG */
+  cursor: text; 
+}
+
+/* 模拟真实的物理按键感 */
+kbd {
+  margin: 0 0.2em;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25em;
+  border: 1px solid var(--vp-c-divider);
+  background-color: var(--vp-c-bg-alt);
+  box-shadow: 0 2px 0 var(--vp-c-divider); /* 底部厚度感 */
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.85em;
+  color: var(--vp-c-text-1);
+  vertical-align: middle;
+}
+
+
+/* 1. 重点关键词：极客荧光高亮 (使用 <mark> 标签) */
+.vp-doc mark {
+  background-color: rgba(255, 148, 25, 0.15); /* 淡淡的橙色背景 */
+  border-bottom: 2px solid #FF9419;           /* 底部醒目的橙色线条 */
+  color: var(--vp-c-text-1);
+  padding: 0 4px;
+  margin: 0 2px;
+  border-radius: 2px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.vp-doc mark:hover {
+  background-color: rgba(255, 148, 25, 0.3); /* 鼠标划过更亮 */
+}
+
+/* 2. 废弃/陈旧语句：专业失效感 (使用 ~~ 标签) */
+.vp-doc s, .vp-doc del {
+  color: var(--vp-c-text-3);         /* 文字变灰 */
+  text-decoration: line-through;     /* 删除线 */
+  text-decoration-color: #FF021D;    /* 删除线用红色，表示警告/废弃 */
+  opacity: 0.5;                      /* 整体半透明，降低存在感 */
+  padding: 0 4px;
+  filter: grayscale(1);              /* 彻底去色 */
+}
+
+/* 3. 进阶：技术术语强调 (使用 <u> 标签) */
+.vp-doc u {
+  text-decoration: none;
+  border-bottom: 1px dashed var(--vp-c-brand-1); /* 虚线底纹 */
+  cursor: help;
+}
+
+
+
+/* --- 深度跳转链接样式 --- */
+.jump-link {
+  color: var(--vp-c-brand-1) !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  padding: 0 2px;
+  /* 使用波浪线底纹，表示“点击即可深入” */
+  text-decoration: underline wavy rgba(255, 148, 25, 0.3) !important;
+  text-underline-offset: 4px;
+  transition: all 0.3s ease;
+}
+
+.jump-link:hover {
+  /* 悬浮时波浪线变实，背景微亮 */
+  text-decoration: underline wavy #FF9419 !important;
+  background-color: rgba(255, 148, 25, 0.1);
+  border-radius: 4px;
+}
+
+/* 在文字后面加一个极简的跳转箭头 */
+.jump-link::after {
+  content: " ➔";
+  font-size: 0.7em;
+  display: inline-block;
+  transform: rotate(-45deg); /* 向上旋转 45 度，表示跳转 */
+  opacity: 0.5;
+  transition: transform 0.3s;
+}
+
+.jump-link:hover::after {
+  transform: rotate(-45deg) translate(2px, -2px); /* 悬浮时箭头有个向外跳的动效 */
+  opacity: 1;
+}
+
+/* 目标位置高亮（点击跳转过去后，目标文字闪烁一下，提醒用户看这里） */
+@keyframes target-glow {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(255, 148, 25, 0.3); }
+  100% { background-color: transparent; }
+}
+
+:target {
+  animation: target-glow 1.5s ease;
+  scroll-margin-top: 80px; /* 防止标题被顶部导航栏遮住 */
+}

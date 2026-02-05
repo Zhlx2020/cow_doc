@@ -1,0 +1,58 @@
+/* 1. 调整 Logo 和标题的间距 */
+.VPNavBar .title {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Logo 和文字的间距 */
+  font-family: "JetBrains Mono", sans-serif !important;
+  font-size: 20px;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  text-transform: uppercase; /* 英文会自动变大写，中文会显得更方正 */
+}
+
+
+
+/* 4. 让 Logo 大小合适 */
+/* 1. 基础大小设置 */
+.VPNavBar .logo {
+  width: 32px;
+  height: 32px;
+  /* 🚩 关键：设置变形基点为底部，这样压扁时才会有踩在地上的感觉 */
+  transform-origin: bottom;
+  transition: transform 0.2s ease-out;
+}
+
+/* 2. 定义“蓄力跳跃”动画 */
+@keyframes cute-jump {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+  20% {
+    /* 蓄力压扁：y轴压���，x轴微扩 */
+    transform: translateY(0) scale(1.2, 0.7);
+  }
+  40% {
+    /* 腾空跃起：y轴拉伸，x轴变窄 */
+    transform: translateY(-15px) scale(0.8, 1.3);
+  }
+  60% {
+    /* 到达最高点：恢复一点点形状 */
+    transform: translateY(-18px) scale(1, 1);
+  }
+  80% {
+    /* 落地冲击：再次压扁 */
+    transform: translateY(0) scale(1.1, 0.8);
+  }
+  100% {
+    /* 恢复原状 */
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+/* 3. 悬浮触发动画 */
+/* 当鼠标滑过标题区域或 Logo 时触发 */
+.VPNavBar .title:hover .logo {
+  /* 1秒内完成跳跃，无限循环，或者你可以改为 1 让他只跳一次 */
+  animation: cute-jump 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+

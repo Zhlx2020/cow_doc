@@ -1,0 +1,68 @@
+/* ============================================================
+   ✨ 经典容器美化 (精致侧边条风格)
+   ============================================================ */
+
+/* 1. 基础容器：增加圆角和微阴影 */
+.vp-doc .custom-block {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  /* 🚩 关键：左侧直角，右侧圆角，更有书卷感 */
+  border-radius: 0 8px 8px 0; 
+  border-left: 5px solid transparent; /* 增宽左边条 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* 2. 悬停微动：增加互动感 */
+.vp-doc .custom-block:hover {
+  transform: translateX(4px); /* 轻轻向右滑动 */
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 3. 标题优化：更清晰、更有力 */
+.vp-doc .custom-block-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+
+/* ------------------------------------------------------------
+   各类型色彩强化 (使用线性渐变背景让它更透亮)
+   ------------------------------------------------------------ */
+
+/* Info - 蓝色 */
+.vp-doc .custom-block.info {
+  border-color: var(--vp-c-info-1);
+  /* 使用透明度渐变，让背景看起来不沉闷 */
+  background: linear-gradient(to right, var(--vp-c-info-soft), transparent);
+}
+.vp-doc .custom-block.info .custom-block-title { color: var(--vp-c-info-1); }
+
+/* Tip - 绿色 (品牌色) */
+.vp-doc .custom-block.tip {
+  border-color: var(--vp-c-brand-1);
+  background: linear-gradient(to right, var(--vp-c-brand-soft), transparent);
+}
+.vp-doc .custom-block.tip .custom-block-title { color: var(--vp-c-brand-1); }
+
+/* Warning - 橙色 */
+.vp-doc .custom-block.warning {
+  border-color: var(--vp-c-warning-1);
+  background: linear-gradient(to right, var(--vp-c-warning-soft), transparent);
+}
+.vp-doc .custom-block.warning .custom-block-title { color: var(--vp-c-warning-1); }
+
+/* Danger - 红色 */
+.vp-doc .custom-block.danger {
+  border-color: var(--vp-c-danger-1);
+  background: linear-gradient(to right, var(--vp-c-danger-soft), transparent);
+}
+.vp-doc .custom-block.danger .custom-block-title { color: var(--vp-c-danger-1); }
+
+/* 深色模式下的背景微调，确保通透感 */
+.dark .vp-doc .custom-block {
+  background-color: rgba(255, 255, 255, 0.03);
+}

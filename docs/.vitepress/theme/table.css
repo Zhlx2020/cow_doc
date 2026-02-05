@@ -1,0 +1,64 @@
+/* --- 通用大厂风表格美化 --- */
+
+.vp-doc table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse; /* 采用通用的折叠边框 */
+  margin: 20px 0;
+  background-color: var(--vp-c-bg);
+  font-size: 14px; /* 标准文档字号 */
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* 1. 表头：浅灰色背景，稳重而不突兀 */
+.vp-doc thead tr {
+  background-color: var(--vp-c-bg-soft);
+  border-bottom: 2px solid var(--vp-c-divider);
+}
+
+.vp-doc th {
+  padding: 12px 16px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  white-space: nowrap; /* 标题不换行 */
+}
+
+/* 2. 单元格：细线分隔 */
+.vp-doc td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+  vertical-align: middle;
+}
+
+/* 3. 悬停状态：使用组件库常见的浅蓝色调 (适配深色模式) */
+.vp-doc tr {
+  transition: background-color 0.2s ease;
+}
+
+.vp-doc tr:hover {
+  background-color: var(--vp-c-bg-mute) !important;
+}
+
+/* 4. 特殊列加粗：如果是第一列，通常是关键名称 */
+.vp-doc td:first-child {
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+}
+
+/* 5. 针对代码段的优雅处理 */
+.vp-doc td code {
+  font-size: 0.85em;
+  background-color: var(--vp-c-default-soft);
+  color: var(--vp-c-brand-1); /* 使用主题色作为重点 */
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin: 0 2px;
+}
+
+/* 6. 去掉外层默认的边框和阴影，保持扁平化 */
+.vp-doc th, .vp-doc td {
+  border-left: none;
+  border-right: none;
+}

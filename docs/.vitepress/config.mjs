@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 import { getSidebar } from './sidebar-auto.js'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-
+  base: '/cow_doc/', 
   title: "小赵在学习ing",
   description: "小赵的学习笔记站",
   themeConfig: {

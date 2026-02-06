@@ -38,6 +38,10 @@ export default defineConfig({
     ],
     search: {
       provider: 'local'
+    },
+        editLink: {
+      pattern: 'https://github.com/Zhlx2020/cow_doc#',
+      text: 'Edit this page on GitHub'
     }
   },
   markdown: {

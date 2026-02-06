@@ -30,8 +30,8 @@ kbd {
 
 /* 1. 重点关键词：极客荧光高亮 (使用 <mark> 标签) */
 .vp-doc mark {
-  background-color: rgba(255, 148, 25, 0.15); /* 淡淡的橙色背景 */
-  border-bottom: 2px solid #FF9419;           /* 底部醒目的橙色线条 */
+  background-color: rgba(243, 73, 6, 0.15); /* 淡淡的橙色背景 */
+
   color: var(--vp-c-text-1);
   padding: 0 4px;
   margin: 0 2px;
@@ -41,7 +41,7 @@ kbd {
 }
 
 .vp-doc mark:hover {
-  background-color: rgba(255, 148, 25, 0.3); /* 鼠标划过更亮 */
+  background-color: rgba(255, 148, 25, 0.911); /* 鼠标划过更亮 */
 }
 
 /* 2. 废弃/陈旧语句：专业失效感 (使用 ~~ 标签) */
@@ -56,6 +56,7 @@ kbd {
 
 /* 3. 进阶：技术术语强调 (使用 <u> 标签) */
 .vp-doc u {
+   background-color: rgba(6, 148, 243, 0.15); /* 淡淡的橙色背景 */
   text-decoration: none;
   border-bottom: 1px dashed var(--vp-c-brand-1); /* 虚线底纹 */
   cursor: help;

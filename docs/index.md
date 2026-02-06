@@ -39,7 +39,7 @@ features:
 
 ```sh
 # 克隆心流
-git clone https://github.com/your-repo/my-notes.git
+git clone https://github.com/Zhlx2020/cow_doc.git
 
 # 注入动力
 npm install

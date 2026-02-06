@@ -109,3 +109,40 @@ kbd {
   animation: target-glow 1.5s ease;
   scroll-margin-top: 80px; /* 防止标题被顶部导航栏遮住 */
 }
+.markdown-body, .vp-doc {
+  /* 字体方案：无衬线且优先考虑系统字体，阅读友好 */
+  font-size: 18px;             /* 推荐16-20px */
+  line-height: 1.75;           /* 推荐1.6-2.0，更宽松更易读 */
+  color: #222;                 /* 深灰而非纯黑，更柔和 */
+  max-width: 740px;            /* 限制内容宽度，防止过宽导致阅读困难 */
+  margin: 0 auto;              /* 居中显示 */
+  padding: 24px;
+  letter-spacing: 0.01em;      /* 适度字距，舒缓拥挤感 */
+}
+.markdown-body p, .vp-doc p {
+  margin-top: 0;
+  margin-bottom: 18px;         /* 段落间距 */
+}
+.markdown-body h1, .vp-doc h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.6em;
+}
+.markdown-body h2, .vp-doc h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
+}
+.markdown-body h3, .vp-doc h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+.markdown-body ul, .vp-doc ul,
+.markdown-body ol, .vp-doc ol {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+.markdown-body code, .vp-doc code {
+  font-size: 0.95em;
+  background-color: #f6f8fa;
+  border-radius: 4px;
+  padding: 2px 5px;
+}

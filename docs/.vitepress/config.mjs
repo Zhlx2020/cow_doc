@@ -45,7 +45,7 @@ export default defineConfig({
     }
   },
   markdown: {
-
+breaks: true, // 启用自动换行（兼容 GFM）
     container: {
       tipLabel: '提示',
       warningLabel: '警告',

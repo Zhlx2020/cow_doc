@@ -13,7 +13,7 @@ hero:
       text: 开启探索
       link: /nav
     - theme: alt
-      text: 关于笔记
+      text: 关于本站
       link: /about
 
 features:

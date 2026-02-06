@@ -25,7 +25,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # 🚩 第一步：安装 pnpm
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -35,19 +34,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # 🚩 第二步：显式指定 pnpm 缓存
           cache: 'pnpm'
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Install dependencies
-        # 🚩 第三步：安装依赖
         run: pnpm install 
 
       - name: Build with VitePress
-        # 🚩 第四步：执行构建 (对应你 package.json 里的 build 脚本)
         run: pnpm run build
+
+      # ⭐⭐ 在此处插入 CNAME 步骤 ⭐⭐
+      - name: Add CNAME file
+        run: echo 'www.777468.xyz' > docs/.vitepress/dist/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

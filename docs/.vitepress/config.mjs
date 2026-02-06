@@ -12,6 +12,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '笔记', link: '/nav' },
+      { text: '卡片', link: '/card' },
       // {
       //   text: '下拉菜单',
       //   items: [

@@ -24,18 +24,18 @@ const skillData = ref([
     ]
   },
   {
-    title: '前端基石与框架',
+    title: 'GO语言学习',
     icon: '🎨',
     skills: [
       {
-        status: 'mastered', tag: '熟练掌握', title: 'Vue 3 核心生态',
+        status: 'mastered', tag: '熟练掌握', title: 'Go基础实战',
         desc: '深入响应式原理、虚拟 DOM 及组合式 API 实战。',
-        link: '/frontend/vue3'
+        link: '/golang/01_base/02-go基础语法'
       },
       {
-        status: 'learning', tag: '学习中', title: 'Vite 构建艺术',
+        status: 'learning', tag: '学习中', title: 'Go进阶实战',
         desc: '探索 HMR 机制、插件开发及极致的打包优化。',
-        link: '/frontend/vite'
+        link: '/golang/master'
       }
     ]
   },

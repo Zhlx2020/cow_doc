@@ -29,6 +29,7 @@ export default defineConfig({
     sidebar: {
       '/os/': getSidebar('./os'),
       '/cloud/': getSidebar('./cloud'),
+      '/golang/': getSidebar('./golang'),
     },
 
     socialLinks: [

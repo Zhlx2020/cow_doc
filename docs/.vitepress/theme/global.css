@@ -111,13 +111,14 @@ kbd {
 }
 .markdown-body, .vp-doc {
   /* 字体方案：无衬线且优先考虑系统字体，阅读友好 */
-  font-size: 18px;             /* 推荐16-20px */
+  font-size: 16px;             /* 推荐16-20px */
   line-height: 1.75;           /* 推荐1.6-2.0，更宽松更易读 */
   color: #222;                 /* 深灰而非纯黑，更柔和 */
   max-width: 740px;            /* 限制内容宽度，防止过宽导致阅读困难 */
   margin: 0 auto;              /* 居中显示 */
   padding: 24px;
   letter-spacing: 0.01em;      /* 适度字距，舒缓拥挤感 */
+  font-weight: 400;
 }
 .markdown-body p, .vp-doc p {
   margin-top: 0;
@@ -146,3 +147,4 @@ kbd {
   border-radius: 4px;
   padding: 2px 5px;
 }
+

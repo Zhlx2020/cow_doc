@@ -13,6 +13,8 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '笔记', link: '/nav' },
       { text: '卡片', link: '/card' },
+      { text: '导航', link: '/tools' },
+      
       // {
       //   text: '下拉菜单',
       //   items: [

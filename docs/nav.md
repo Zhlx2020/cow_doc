@@ -14,7 +14,7 @@ const skillData = ref([
       {
         status: 'learning', tag: '学习中', title: 'sre网站稳定性',
         desc: '深入响应式原理、虚拟 DOM 及组合式 API 实战。',
-        link: '/cloud/sre/01-网站的不稳定因素'
+        link: '/cloud/01_sre/01-网站的不稳定因素'
       },
       {
         status: 'learning', tag: '学习中', title: 'Vite 构建艺术',

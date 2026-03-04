@@ -8,14 +8,14 @@
   padding: 1rem 1.5rem;
   /* 🚩 关键：左侧直角，右侧圆角，更有书卷感 */
   border-radius: 0 8px 8px 0; 
-  border-left: 5px solid transparent; /* 增宽左边条 */
+  border-left: 3px solid transparent; /* 增宽左边条 */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   background-color: var(--vp-c-bg-soft);
 }
 
 /* 2. 悬停微动：增加互动感 */
 .vp-doc .custom-block:hover {
-  transform: translateX(4px); /* 轻轻向右滑动 */
+
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.05);
 }
 
@@ -23,46 +23,73 @@
 .vp-doc .custom-block-title {
   font-weight: 700;
   font-size: 0.95rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 1.2em !important;
   letter-spacing: 0.5px;
   display: flex;
   align-items: center;
 }
-
+/* 4. 内容样式 */
+.vp-doc .custom-block p {
+  margin: 0;
+  line-height: 1.65;
+  color: #24292f;
+  font-size: 1rem;
+}
 /* ------------------------------------------------------------
-   各类型色彩强化 (使用线性渐变背景让它更透亮)
+   各类型精确配色
    ------------------------------------------------------------ */
 
-/* Info - 蓝色 */
-.vp-doc .custom-block.info {
-  border-color: var(--vp-c-info-1);
-  /* 使用透明度渐变，让背景看起来不沉闷 */
-  background: linear-gradient(to right, var(--vp-c-info-soft), transparent);
+/* Note - 蓝色 */
+.vp-doc .custom-block.info,
+.vp-doc .custom-block.note {
+  border-left-color: #0969da;
+  background: #fff;
+  padding-bottom: 1em;
 }
-.vp-doc .custom-block.info .custom-block-title { color: var(--vp-c-info-1); }
+.vp-doc .custom-block.info .custom-block-title,
+.vp-doc .custom-block.note .custom-block-title {
+  color: #0969da;
+}
 
-/* Tip - 绿色 (品牌色) */
+/* Tip - 绿色 */
 .vp-doc .custom-block.tip {
-  border-color: var(--vp-c-brand-1);
-  background: linear-gradient(to right, var(--vp-c-brand-soft), transparent);
+  border-left-color: #1a7f37;
+  background: #fff;
+  padding-bottom: 1em;
 }
-.vp-doc .custom-block.tip .custom-block-title { color: var(--vp-c-brand-1); }
+.vp-doc .custom-block.tip .custom-block-title {
+  color: #1a7f37;
+}
 
-/* Warning - 橙色 */
+/* Important - 紫色 */
+.vp-doc .custom-block.important {
+  border-left-color: #8250df;
+    background: #fff;
+    padding-bottom: 1em;
+}
+.vp-doc .custom-block.important .custom-block-title {
+  color: #8250df;
+}
+
+/* Warning - 橙黄色 */
 .vp-doc .custom-block.warning {
-  border-color: var(--vp-c-warning-1);
-  background: linear-gradient(to right, var(--vp-c-warning-soft), transparent);
+  border-left-color: #bf8700;
+    background: #fff;
+    padding-bottom: 1em;
 }
-.vp-doc .custom-block.warning .custom-block-title { color: var(--vp-c-warning-1); }
+.vp-doc .custom-block.warning .custom-block-title {
+  color: #9a6700;
 
-/* Danger - 红色 */
-.vp-doc .custom-block.danger {
-  border-color: var(--vp-c-danger-1);
-  background: linear-gradient(to right, var(--vp-c-danger-soft), transparent);
 }
-.vp-doc .custom-block.danger .custom-block-title { color: var(--vp-c-danger-1); }
 
-/* 深色模式下的背景微调，确保通透感 */
-.dark .vp-doc .custom-block {
-  background-color: rgba(255, 255, 255, 0.03);
+/* Caution - 红色 */
+.vp-doc .custom-block.danger,
+.vp-doc .custom-block.caution {
+  border-left-color: #d1242f;
+    background: #fff;
+    padding-bottom: 1em;
+}
+.vp-doc .custom-block.danger .custom-block-title,
+.vp-doc .custom-block.caution .custom-block-title {
+  color: #cf222e;
 }
